@@ -4,7 +4,7 @@ import java.util.Scanner;
 /**
  * Created by SaurabhKhanduja on 17/06/17.
  */
-class LargeSum { // Rename file to LargeSum.java before compiling.
+class LargeSum {
     public static void main(String[] args) {
         int t;
         Scanner sc = new Scanner(System.in);
