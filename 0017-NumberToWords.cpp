@@ -26,6 +26,9 @@ string speakHuman(long long n, long long thousandIndex) {
             s += " " + speakNumHuman[hundred] + " Hundred";
         else
             s += speakNumHuman[hundred] + " Hundred";
+        if (n > 0) {
+            s += " and";
+        }
     }
 
     if( n > 9 && n <= 20) {
@@ -75,9 +78,17 @@ int main(){
     for(long long a0 = 0; a0 < t; a0++) {
         long long n;
         cin >> n;
-        if(n == 0)
-            cout << "Zero" << endl;
-        cout << "\"" << speakHuman(n, 0)<< "\"" << endl;
+        int count = 0;
+        for(int i=1; i <= n; i++) {
+            string s = speakHuman(i, 0);
+            cout << s << endl;
+            for (int j = 0; j < s.length(); ++j)
+            {
+                if(isalpha(s[j]))
+                    count++;
+            }
+        }
+        cout << count << endl;
     }
     return 0;
 }
